@@ -37,11 +37,15 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    buildFeatures {
+        dataBinding = true
+    }
+    buildToolsVersion = "35.0.0"
 }
 
 dependencies {
 
-    val room_version = "2.6.1"
+    val room_version = "2.7.0"
     val lifecycle_version = "2.8.7"
 
     implementation("androidx.room:room-runtime:$room_version")
@@ -49,7 +53,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
 
-    ksp("androidx.room:room-compiler:$room_version")
+    ksp("androidx.room:room-compiler:2.7.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
