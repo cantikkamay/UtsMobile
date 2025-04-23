@@ -54,7 +54,7 @@ class HomeActivity : AppCompatActivity() {
         if (userEmail != null) {
             fetchUserData(userEmail)
         } else {
-            displayUserDataNotFound()
+            clearUserData()
         }
     }
 
@@ -78,15 +78,8 @@ class HomeActivity : AppCompatActivity() {
                 }
             } else {
                 Log.d("HomeActivity", "User tidak ditemukan di database")
-                displayUserDataNotFound()
+                clearUserData()
             }
         }
-    }
-
-    private fun displayUserDataNotFound() {
-        binding.dataNama.text = "Nama kosong"
-        binding.dataEmail.text = "Email kosong"
-        binding.dataNoHp.text = "NoHp kosong"
-        binding.dataAlamat.text = "Alamat kosong"
     }
 }
